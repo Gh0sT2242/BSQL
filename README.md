@@ -29,10 +29,10 @@ Install the c++ build chain for your operating system as well as [CMake](https:/
 
 ### Linux
 - Dependencies (Debian based distros)
-- libmariadb2:i386 libmariadbclient-dev:i386 libssl1.1:i386 (exact libssl version probably doesn't matter exactly)
+- libmariadb2:i386 libmariadbclient-dev:i386 libssl1.1:i386 (exact version doesn't matter) gcc-4.8-multilib g++-4.8-multilib
 - Cmake expects the includes to be in `/usr/include/mysql` and the libraries to be in `/usr/lib/i386-linux-gnu`, you'll have to adjust the paths in CMakelists if your distro does it differently
-- Generate makefiles with `cmake`
-- Use `make` to build
+- Generate makefiles with `cmake -DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake path/to/code/root`
+- Use `make` as a root user to build
 #### Troubleshooting
 - Run ldd on the output .so file, ensure all dependencies exist and are valid
 - Run file on the output .so file and validate it's a 32 bit lib
