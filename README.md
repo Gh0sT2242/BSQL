@@ -33,6 +33,11 @@ Install the c++ build chain for your operating system as well as [CMake](https:/
 - Cmake expects the includes to be in `/usr/include/mysql` and the libraries to be in `/usr/lib/i386-linux-gnu`, you'll have to adjust the paths in CMakelists if your distro does it differently
 - Generate makefiles with `cmake`
 - Use `make` to build
+
+### Linux Alternative
+- Make the LinuxInstall.sh file executable via `chmod +x LinuxInstall.sh`
+- run LinuxInstall.sh as a super user
+- All dependencies will be installed and the binaries will be build for you.
 #### Troubleshooting
 - Run ldd on the output .so file, ensure all dependencies exist and are valid
 - Run file on the output .so file and validate it's a 32 bit lib
