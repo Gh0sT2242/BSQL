@@ -25,3 +25,11 @@ else
   cp /usr/lib/i386-linux-gnu/libmariadb.so.2 $HOME/MariaDB/
   ln -s $HOME/MariaDB/libmariadb.so.2 $HOME/MariaDB/libmariadb.so
 fi
+
+if [ -d "$HOME/vcpkg/triplets/x86-linux.cmake" ];
+then
+  echo "x86 library located"
+else
+  echo "Building Cmake x86 libraries"
+  cp $HOME/BSQL/build/x86-linux.cmake $HOME/vcpkg/triplets
+fi
